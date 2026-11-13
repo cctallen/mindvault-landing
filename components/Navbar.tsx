@@ -58,7 +58,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <Link href="#contact" className={`text-sm transition-colors duration-300 ${
+          <Link href="https://app.getmindvault.ai" className={`text-sm transition-colors duration-300 ${
             scrolled ? "text-slate-600 hover:text-slate-900" : "text-white/80 hover:text-white"
           }`}>
             Sign in
