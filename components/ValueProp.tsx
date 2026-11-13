@@ -75,8 +75,8 @@ export default function ValueProp() {
             <br className="hidden sm:block" /> as your agents
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-slate-500">
-            Context is the difference between an agent that frustrates and one
-            that feels like a real teammate. MindVault gives your agents that edge.
+            Share memory across agents, retain context across sessions, and manage
+            exactly what your agents know — and what they don&apos;t.
           </p>
         </div>
 
