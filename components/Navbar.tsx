@@ -31,7 +31,9 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-bold text-xl tracking-tight text-slate-900">
+        <Link href="/" className={`flex items-center gap-2 font-bold text-xl tracking-tight transition-colors duration-300 ${
+          scrolled ? "text-slate-900" : "text-white"
+        }`}>
           <span className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white text-sm font-bold">M</span>
           MindVault
         </Link>
@@ -42,7 +44,11 @@ export default function Navbar() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="px-3 py-2 text-sm text-slate-600 hover:text-indigo-600 rounded-md transition-colors"
+                className={`px-3 py-2 text-sm rounded-md transition-colors duration-300 ${
+                  scrolled
+                    ? "text-slate-600 hover:text-indigo-600"
+                    : "text-white/90 hover:text-white font-medium"
+                }`}
               >
                 {l.label}
               </Link>
@@ -52,7 +58,9 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <Link href="#contact" className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
+          <Link href="#contact" className={`text-sm transition-colors duration-300 ${
+            scrolled ? "text-slate-600 hover:text-slate-900" : "text-white/80 hover:text-white"
+          }`}>
             Sign in
           </Link>
           <Link
@@ -65,7 +73,9 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2 rounded-md text-slate-600 hover:text-slate-900"
+          className={`md:hidden p-2 rounded-md transition-colors duration-300 ${
+            scrolled ? "text-slate-600 hover:text-slate-900" : "text-white/90 hover:text-white"
+          }`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
