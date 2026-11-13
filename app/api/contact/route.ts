@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     };
 
     await resend.emails.send({
-      from: "MindVault <onboarding@resend.dev>",
+      from: "MindVault <noreply@getmindvault.ai>",
       to: "todd@collectivepoint.com",
       replyTo: email,
       subject: `🧠 New MindVault waitlist signup — ${name}${company ? ` (${company})` : ""}`,
