@@ -15,9 +15,17 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setState("submitting");
-    // Simulate submission — replace with real endpoint (Formspree, Resend, etc.)
-    await new Promise((r) => setTimeout(r, 1200));
-    setState("success");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setState("success");
+    } catch {
+      setState("error");
+    }
   };
 
   return (
@@ -189,6 +197,11 @@ export default function Contact() {
                 <p className="text-xs text-slate-500 text-center">
                   No spam. We'll only reach out about your MindVault access.
                 </p>
+                {state === "error" && (
+                  <p className="text-xs text-red-400 text-center">
+                    Something went wrong — please try again or email us directly.
+                  </p>
+                )}
               </form>
             )}
           </div>
